@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developers start guide &mdash; PugSharp 2.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=a7e3f902"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Folder structure" href="folderstructure.html" />
+    <link rel="prev" title="Admins quickstart guide" href="../admin/quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PugSharp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License (GNU General Public License)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admins guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin/quickstart.html">Admins quickstart guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developers start guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#development-prerequisites">Development Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-pugsharp-locally">Run PugSharp locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#digging-deeper">Digging deeper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-analysis">code analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folderstructure.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cicd.html">CI / CD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation / i18n</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PugSharp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Developers start guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/develop/quickstart.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="developers-start-guide">
+<h1>Developers start guide<a class="headerlink" href="#developers-start-guide" title="Permalink to this heading"></a></h1>
+<p>We are glad you want to help us on PugSharp!
+Some things you should think of before you start implementing new features or fixing bugs:</p>
+<ul class="simple">
+<li><p>Can another feature thats already implemented be expanded? yes? then go for that instead of Building complete new stuff!</p></li>
+<li><p>Does the addition / change might affect other usecases than your own? Build your changes with legacy support in mind!</p></li>
+<li><p>Try to follow the coding Style which is used within PugSharp, just look around in our code to see which case is handled mostly in which manner</p></li>
+<li><p>Why i shouldn’t join the PugSharp discord developer channel for discussion?</p></li>
+</ul>
+<p>To start a new code contribution please:</p>
+<ul class="simple">
+<li><p>open an issue to announce that you are working on a feature/change to get thoughts from the other developers and to prevent incompatibillities</p></li>
+<li><p>make your fork PugSharp (if you are not already a acknowledged developer who can create branches on our repository)</p></li>
+<li><p>make a new branch based on <code class="docutils literal notranslate"><span class="pre">main</span></code> with the Name <code class="docutils literal notranslate"><span class="pre">feature/examplefeature</span></code></p></li>
+<li><p>as soon as you have code, please open a draft pull request against the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
+</ul>
+<p>Before you want to change your draft pull request to a finalized pull request to main you should ask yourself some questions:</p>
+<ul class="simple">
+<li><p>Are my changes update proof?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Have i changed the admin documentation on the affected parts?</p></li>
+<li><p>Have i changed the developer documentation on the affected parts?</p></li>
+<li><p>Have i changed the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> on the affected parts?</p></li>
+<li><p>Have i written all ne needed tests for my code?</p></li>
+<li><p>Does my pull request have a good speaking name that represents my changes in the changelog?</p></li>
+<li><p>Do i have merged the current main branch into my feature branch?</p></li>
+</ul>
+<p>What will happen after you have converted to the finalized pull request:</p>
+<ul class="simple">
+<li><p>Someone of the core developer team assigns a specific label to your pull request, then our sonarcloud code analysis will run on your code. Afterwards please fix the things sonarcloud complains about.</p></li>
+<li><p>When your code passes the sonarcloud analysis, someone of the core developer team will review your code and will help you to find missing things or bugs.</p></li>
+<li><p>As soon as the review is done, your code will be merged to main and will get merged to available for all users in the next release. Currently we dont have a fixed release cycle.</p></li>
+</ul>
+<section id="development-prerequisites">
+<h2>Development Prerequisites<a class="headerlink" href="#development-prerequisites" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Download and install .Net7 SDK <a class="reference external" href="https://dotnet.microsoft.com/download/dotnet/7.0">https://dotnet.microsoft.com/download/dotnet/7.0</a></p></li>
+<li><p>Install your IDE of choise (Visual Studio or VSCode works best)</p></li>
+</ul>
+</section>
+<section id="run-pugsharp-locally">
+<h2>Run PugSharp locally<a class="headerlink" href="#run-pugsharp-locally" title="Permalink to this heading"></a></h2>
+<p>to be done.</p>
+</section>
+<section id="digging-deeper">
+<h2>Digging deeper<a class="headerlink" href="#digging-deeper" title="Permalink to this heading"></a></h2>
+<p>If you want to know more about our development thoughts, you might want to take a look into:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="folderstructure.html"><span class="doc">Folder structure</span></a></p></li>
+<li><p><a class="reference internal" href="cicd.html"><span class="doc">CI / CD</span></a></p></li>
+<li><p><a class="reference internal" href="release.html"><span class="doc">Release process</span></a></p></li>
+<li><p><a class="reference internal" href="translation.html"><span class="doc">Translation / i18n</span></a></p></li>
+</ul>
+</section>
+<section id="code-analysis">
+<h2>code analysis<a class="headerlink" href="#code-analysis" title="Permalink to this heading"></a></h2>
+<p>we do our code analysis on <a class="reference external" href="https://sonarcloud.io/project/overview?id=Lan2Play_PugSharp">sonarcloud</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../admin/quickstart.html" class="btn btn-neutral float-left" title="Admins quickstart guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="folderstructure.html" class="btn btn-neutral float-right" title="Folder structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Lan2Play Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

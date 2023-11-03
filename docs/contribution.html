@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribution Guide &mdash; PugSharp 2.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=a7e3f902"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License (GNU General Public License)" href="license.html" />
+    <link rel="prev" title="PugSharp" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PugSharp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contribution Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-with-docker-and-the-make-file">Building with docker and the make file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#building-manually-with-the-sphinx-make-file">Building manually with the sphinx make file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#translation-i18n">Translation / i18n</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License (GNU General Public License)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admins guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="admin/quickstart.html">Admins quickstart guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="develop/quickstart.html">Developers start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/folderstructure.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/cicd.html">CI / CD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/release.html">Release process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/translation.html">Translation / i18n</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PugSharp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Contribution Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/contribution.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contribution-guide">
+<h1>Contribution Guide<a class="headerlink" href="#contribution-guide" title="Permalink to this heading"></a></h1>
+<p>We are looking forward to every conbtirbution you possibly can bring in. If you want to contribute please read this document carefully.</p>
+<p>If you encounter serious errors while using PugSharp and you are not able to fix them, feel free to open issues on <a class="reference external" href="https://github.com/Lan2Play/PugSharp/issues">https://github.com/Lan2Play/PugSharp/issues</a> .</p>
+<p>If you plan to add a feature to PugSharp, please open an issue as well and draft a pull request as soon as you have done something, so no one has to do work that someone already did.</p>
+<p>You can also join our discord to get in contact with us and the other contributors:</p>
+<a class="reference external image-reference" href="https://discord.gg/zF5C9WPWFq"><img alt="https://discordapp.com/api/guilds/748086853449810013/widget.png?style=banner3" src="https://discordapp.com/api/guilds/748086853449810013/widget.png?style=banner3" /></a>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading"></a></h2>
+<p>This documentation is written in restructured text and its build using sphinx and the read the docs theme. The source can be found in our main repository in the <code class="docutils literal notranslate"><span class="pre">Docs/</span></code> subfolder (<a class="reference external" href="https://github.com/Lan2Play/PugSharp/tree/main/Docs">https://github.com/Lan2Play/PugSharp/tree/main/Docs</a>).
+Feel free to pull request corrections or expansions of the documentation at any time!</p>
+<p>To build the documentation locally to the <code class="docutils literal notranslate"><span class="pre">Docs/build</span></code> subfolder you have two options:</p>
+<ul class="simple">
+<li><p>Building with docker and the make file (recommended)</p></li>
+<li><p>Building manually with the sphinx make file</p></li>
+</ul>
+<section id="building-with-docker-and-the-make-file">
+<h3>Building with docker and the make file<a class="headerlink" href="#building-with-docker-and-the-make-file" title="Permalink to this heading"></a></h3>
+<section id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this heading"></a></h4>
+<p>Prerequisites:</p>
+<ul class="simple">
+<li><p>Docker for Windows with wsl2 backend (<a class="reference external" href="https://docs.docker.com/docker-for-windows/wsl/">https://docs.docker.com/docker-for-windows/wsl/</a> Follow the prerequisites, the download and the install part!)</p></li>
+</ul>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using git, consider cloning the repository within your wsl distro instead of with git for windows to get around line ending problems!</p>
+</div>
+</div></blockquote>
+<p>To build the documentation just enter yor wsl2 distribution and follow the linux part below!</p>
+</section>
+<section id="linux">
+<h4>Linux<a class="headerlink" href="#linux" title="Permalink to this heading"></a></h4>
+<p>Prerequisites:</p>
+<ul class="simple">
+<li><p>Docker (<a class="reference external" href="https://docs.docker.com/engine/install">https://docs.docker.com/engine/install</a>)</p></li>
+<li><p>Make (should be available for nearly every linux distro in the corresponding packagemanager)</p></li>
+</ul>
+<p>In order to build the documentation you have to change to the root folder of the repository and run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>docs-html
+</pre></div>
+</div>
+</section>
+</section>
+<section id="building-manually-with-the-sphinx-make-file">
+<h3>Building manually with the sphinx make file<a class="headerlink" href="#building-manually-with-the-sphinx-make-file" title="Permalink to this heading"></a></h3>
+<section id="id1">
+<h4>Windows<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h4>
+<p>Prerequisites:</p>
+<ul class="simple">
+<li><p>python 3 (<a class="reference external" href="https://docs.python.org/3/using/index.html">https://docs.python.org/3/using/index.html</a>) with pip</p></li>
+<li><p>sphinx (<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/installation.html">https://www.sphinx-doc.org/en/master/usage/installation.html</a>)</p></li>
+<li><p>the read the docs theme (<a class="reference external" href="https://github.com/readthedocs/sphinx_rtd_theme#installation">https://github.com/readthedocs/sphinx_rtd_theme#installation</a>)</p></li>
+</ul>
+<p>open a cmd or powershell and change your folder to the <code class="docutils literal notranslate"><span class="pre">Docs/</span></code> subfolder and run</p>
+<p>CMD</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>make.bat html
+</pre></div>
+</div>
+<p>Psh</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="p">./</span><span class="n">make</span><span class="p">.</span><span class="n">bat</span> <span class="n">html</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h4>Linux<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h4>
+<p>Prerequisites:</p>
+<ul class="simple">
+<li><p>python 3 (<a class="reference external" href="https://docs.python.org/3/using/index.html">https://docs.python.org/3/using/index.html</a>) with pip</p></li>
+<li><p>sphinx (<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/installation.html">https://www.sphinx-doc.org/en/master/usage/installation.html</a>)</p></li>
+<li><p>the read the docs theme (<a class="reference external" href="https://github.com/readthedocs/sphinx_rtd_theme#installation">https://github.com/readthedocs/sphinx_rtd_theme#installation</a>)</p></li>
+<li><p>Make (should be available for nearly every linux distro in the corresponding packagemanager)</p></li>
+</ul>
+<p>open your favorite shell and change your folder to the <code class="docutils literal notranslate"><span class="pre">Docs/</span></code> subfolder and run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="translation-i18n">
+<h2>Translation / i18n<a class="headerlink" href="#translation-i18n" title="Permalink to this heading"></a></h2>
+<p>If you want to help with the translation of PugSharp, please check out our <a class="reference internal" href="develop/translation.html"><span class="doc">Translation / i18n</span></a> section</p>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading"></a></h2>
+<p>If you want to get into coding for PugSharp, check out the <a class="reference internal" href="develop/quickstart.html"><span class="doc">Developers start guide</span></a>, there you can find an introduction into how to setup your development environment, how the contribution process looks like and some specific parts of PugSharp where we would love to see adaption for more usecases.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="PugSharp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="license.html" class="btn btn-neutral float-right" title="License (GNU General Public License)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Lan2Play Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
