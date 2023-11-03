@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Makefile &mdash; PugSharp 2.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=a7e3f902"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Folder structure" href="folderstructure.html" />
+    <link rel="prev" title="Developers start guide" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PugSharp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License (GNU General Public License)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admins guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin/quickstart.html">Admins quickstart guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Developers start guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Makefile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-and-copy">build-and-copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-and-copy-docker">build-and-copy-docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#init-all">init-all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-all">clean-all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepare-folders">prepare-folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#init-env">init-env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-counterstrikesharp">copy-counterstrikesharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-metamod">install-metamod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fix-metamod">fix-metamod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-csserver">start-csserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stop-csserver">stop-csserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-debug">build-debug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-release">build-release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-debug-docker">build-debug-docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-release-docker">build-release-docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-pugsharp">copy-pugsharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docs-html">docs-html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-csserver">clean-csserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-env">clean-env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-build">clean-build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-pugsharp">clean-pugsharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-counterstrikesharp">clean-counterstrikesharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clean-metamod">clean-metamod</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folderstructure.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cicd.html">CI / CD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation / i18n</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PugSharp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Makefile</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/develop/makefile.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="makefile">
+<h1>Makefile<a class="headerlink" href="#makefile" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p><a class="reference external" href="https://www.gnu.org/software/make">GNU Make</a> is a tool that automates several (build)steps for you.
+You can find the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> in the root of the Repository where all available commands are defined.
+On this page every single make command will be documented with its purpose, so you can use them as intended.</p>
+<p>A few of the Commands have optional parameters that can be set via either a prompt after calling the commands or with writing them after the make command.
+So for example when you have the available parameter <code class="docutils literal notranslate"><span class="pre">STEAMUSER</span></code> on the make command <code class="docutils literal notranslate"><span class="pre">init-all</span></code>, that you want to set to <code class="docutils literal notranslate"><span class="pre">username</span></code> your finalized Make command would look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>init-all<span class="w"> </span><span class="nv">STEAMUSER</span><span class="o">=</span><span class="s2">&quot;username&quot;</span>
+</pre></div>
+</div>
+<p>There are 2 types of commands, the group commands and the other commands. Group commands are essentially calling multiple other make Commands here.</p>
+</section>
+<section id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this heading"></a></h2>
+<section id="build-and-copy">
+<h3>build-and-copy<a class="headerlink" href="#build-and-copy" title="Permalink to this heading"></a></h3>
+<p>Publishes a debug build of Pugsharp with the locally installed .Net SDK and copies it in to the local cs2 server</p>
+<p><strong>Group Command</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#build-debug"><span class="std std-ref">build-debug</span></a></p></li>
+<li><p><a class="reference internal" href="#copy-pugsharp"><span class="std std-ref">copy-pugsharp</span></a></p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="build-and-copy-docker">
+<h3>build-and-copy-docker<a class="headerlink" href="#build-and-copy-docker" title="Permalink to this heading"></a></h3>
+<p>Publishes a debug build of Pugsharp with .Net SDK inside of docker and copies it in to the local cs2 server</p>
+<p><strong>Group Command</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#build-debug-docker"><span class="std std-ref">build-debug-docker</span></a></p></li>
+<li><p><a class="reference internal" href="#copy-pugsharp"><span class="std std-ref">copy-pugsharp</span></a></p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="init-all">
+<h3>init-all<a class="headerlink" href="#init-all" title="Permalink to this heading"></a></h3>
+<p>Prepares the gameserver folder, initializes the .env file for the cs2 server, copies CounterStrikeSharp into the server, installs metamod and starts the server.</p>
+<p><strong>Group Command</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#prepare-folders"><span class="std std-ref">prepare-folders</span></a></p></li>
+<li><p><a class="reference internal" href="#init-env"><span class="std std-ref">init-env</span></a></p></li>
+<li><p><a class="reference internal" href="#copy-counterstrikesharp"><span class="std std-ref">copy-counterstrikesharp</span></a></p></li>
+<li><p><a class="reference internal" href="#install-metamod"><span class="std std-ref">install-metamod</span></a></p></li>
+<li><p><a class="reference internal" href="#start-csserver"><span class="std std-ref">start-csserver</span></a></p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">STEAMUSER</span></code> - Steam username for CS2 server download</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STEAMPASS</span></code> - Steam password for CS2 server download</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STEAMGUARD</span></code> - Steamguard key for the above user if required</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SKIPSTEAMGUARD</span></code> - set to anything to disable the prompt for <code class="docutils literal notranslate"><span class="pre">STEAMGUARD</span></code> if it should be empty</p></li>
+</ul>
+</section>
+<section id="clean-all">
+<h3>clean-all<a class="headerlink" href="#clean-all" title="Permalink to this heading"></a></h3>
+<p>Cleans the CS2 server including all plugins, the build folders and the local .env file</p>
+<p><strong>Group Command</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#clean-csserver"><span class="std std-ref">clean-csserver</span></a></p></li>
+<li><p><a class="reference internal" href="#clean-env"><span class="std std-ref">clean-env</span></a></p></li>
+<li><p><a class="reference internal" href="#clean-build"><span class="std std-ref">clean-build</span></a></p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="prepare-folders">
+<h3>prepare-folders<a class="headerlink" href="#prepare-folders" title="Permalink to this heading"></a></h3>
+<p>creates the cs2 folder inside of the repo and makes shure it is writable by everyone</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="init-env">
+<h3>init-env<a class="headerlink" href="#init-env" title="Permalink to this heading"></a></h3>
+<p>copies the .env.example to .env and replaces the parameters in that file.</p>
+<p><strong>Parameters:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">STEAMUSER</span></code> - Steam username for CS2 server download</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STEAMPASS</span></code> - Steam password for CS2 server download</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STEAMGUARD</span></code> - Steamguard key for the above user if required</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SKIPSTEAMGUARD</span></code> - set to anything to disable the prompt for <code class="docutils literal notranslate"><span class="pre">STEAMGUARD</span></code> if it should be empty</p></li>
+</ul>
+</section>
+<section id="copy-counterstrikesharp">
+<h3>copy-counterstrikesharp<a class="headerlink" href="#copy-counterstrikesharp" title="Permalink to this heading"></a></h3>
+<p>copies the CounterStrikeSharp version that is included in our repo to the cs2 server</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="install-metamod">
+<h3>install-metamod<a class="headerlink" href="#install-metamod" title="Permalink to this heading"></a></h3>
+<p>downloads and installs the latest metamod 2.0 dev release into the cs2 server</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="fix-metamod">
+<h3>fix-metamod<a class="headerlink" href="#fix-metamod" title="Permalink to this heading"></a></h3>
+<p>inserts the <code class="docutils literal notranslate"><span class="pre">Game</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">csgo/addons/metamod</span></code> command into ./cs2/game/csgo/gameinfo.gi</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="start-csserver">
+<h3>start-csserver<a class="headerlink" href="#start-csserver" title="Permalink to this heading"></a></h3>
+<p>starts the local cs2 server</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="stop-csserver">
+<h3>stop-csserver<a class="headerlink" href="#stop-csserver" title="Permalink to this heading"></a></h3>
+<p>stops the local cs2 server</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="build-debug">
+<h3>build-debug<a class="headerlink" href="#build-debug" title="Permalink to this heading"></a></h3>
+<p>Publishes a debug build of Pugsharp with the locally installed .Net SDK</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="build-release">
+<h3>build-release<a class="headerlink" href="#build-release" title="Permalink to this heading"></a></h3>
+<p>Publishes a release build of Pugsharp with the locally installed .Net SDK</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="build-debug-docker">
+<h3>build-debug-docker<a class="headerlink" href="#build-debug-docker" title="Permalink to this heading"></a></h3>
+<p>Publishes a debug build of Pugsharp with .Net SDK inside of docker</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="build-release-docker">
+<h3>build-release-docker<a class="headerlink" href="#build-release-docker" title="Permalink to this heading"></a></h3>
+<p>Publishes a debug build of Pugsharp with .Net SDK inside of docker</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="copy-pugsharp">
+<h3>copy-pugsharp<a class="headerlink" href="#copy-pugsharp" title="Permalink to this heading"></a></h3>
+<p>copies pugsharp debug build in to the local cs2 server</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="docs-html">
+<h3>docs-html<a class="headerlink" href="#docs-html" title="Permalink to this heading"></a></h3>
+<p>builds the docs ( see <a class="reference internal" href="../contribution.html#documentation"><span class="std std-ref">Documentation</span></a> )</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="clean-csserver">
+<h3>clean-csserver<a class="headerlink" href="#clean-csserver" title="Permalink to this heading"></a></h3>
+<p>stops and removes the local cs2 server with its data</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="clean-env">
+<h3>clean-env<a class="headerlink" href="#clean-env" title="Permalink to this heading"></a></h3>
+<p>removes the .env file</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="clean-build">
+<h3>clean-build<a class="headerlink" href="#clean-build" title="Permalink to this heading"></a></h3>
+<p>removes the <code class="docutils literal notranslate"><span class="pre">bin</span></code> and <code class="docutils literal notranslate"><span class="pre">obj</span></code> folders, as well as the <code class="docutils literal notranslate"><span class="pre">Docs/build</span></code> folder.</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="clean-pugsharp">
+<h3>clean-pugsharp<a class="headerlink" href="#clean-pugsharp" title="Permalink to this heading"></a></h3>
+<p>removes pugsharp from the local cs2 server</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="clean-counterstrikesharp">
+<h3>clean-counterstrikesharp<a class="headerlink" href="#clean-counterstrikesharp" title="Permalink to this heading"></a></h3>
+<p>removes counterstrikesharp from the local cs2 server</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="clean-metamod">
+<h3>clean-metamod<a class="headerlink" href="#clean-metamod" title="Permalink to this heading"></a></h3>
+<p>removes metamod from the local cs2 server</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Developers start guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="folderstructure.html" class="btn btn-neutral float-right" title="Folder structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Lan2Play Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

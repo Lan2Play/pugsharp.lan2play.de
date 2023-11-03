@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Folder structure" href="folderstructure.html" />
+    <link rel="next" title="Makefile" href="makefile.html" />
     <link rel="prev" title="Admins quickstart guide" href="../admin/quickstart.html" /> 
 </head>
 
@@ -53,12 +53,14 @@
 <p class="caption" role="heading"><span class="caption-text">Developers guide</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Developers start guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#development-prerequisites">Development Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#run-pugsharp-locally">Run PugSharp locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-develop-pugsharp-locally-with-the-make-file">Run / Develop PugSharp locally with the make file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#digging-deeper">Digging deeper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#code-analysis">code analysis</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="makefile.html">Makefile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="folderstructure.html">Folder structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cicd.html">CI / CD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release.html">Release process</a></li>
@@ -91,6 +93,8 @@
              
   <section id="developers-start-guide">
 <h1>Developers start guide<a class="headerlink" href="#developers-start-guide" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
 <p>We are glad you want to help us on PugSharp!
 Some things you should think of before you start implementing new features or fixing bugs:</p>
 <ul class="simple">
@@ -109,8 +113,6 @@ Some things you should think of before you start implementing new features or fi
 <p>Before you want to change your draft pull request to a finalized pull request to main you should ask yourself some questions:</p>
 <ul class="simple">
 <li><p>Are my changes update proof?</p></li>
-</ul>
-<ul class="simple">
 <li><p>Have i changed the admin documentation on the affected parts?</p></li>
 <li><p>Have i changed the developer documentation on the affected parts?</p></li>
 <li><p>Have i changed the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> on the affected parts?</p></li>
@@ -124,21 +126,56 @@ Some things you should think of before you start implementing new features or fi
 <li><p>When your code passes the sonarcloud analysis, someone of the core developer team will review your code and will help you to find missing things or bugs.</p></li>
 <li><p>As soon as the review is done, your code will be merged to main and will get merged to available for all users in the next release. Currently we dont have a fixed release cycle.</p></li>
 </ul>
-<section id="development-prerequisites">
-<h2>Development Prerequisites<a class="headerlink" href="#development-prerequisites" title="Permalink to this heading"></a></h2>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>Download and install .Net7 SDK <a class="reference external" href="https://dotnet.microsoft.com/download/dotnet/7.0">https://dotnet.microsoft.com/download/dotnet/7.0</a></p></li>
+<li><p>Linux / inside WSL2</p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/engine/install/">Docker</a> installed</p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/make">Make</a> installed (use your os packagemanager)</p></li>
 <li><p>Install your IDE of choise (Visual Studio or VSCode works best)</p></li>
+<li><p>a Steam User that has started cs2 at least one time (we recommended a seperate account with Steamguard disabled)</p></li>
+<li><p>(optional) Download and install <a class="reference external" href="https://dotnet.microsoft.com/download/dotnet/7.0">.Net7 SDK</a> (highly recommended)</p></li>
 </ul>
 </section>
-<section id="run-pugsharp-locally">
-<h2>Run PugSharp locally<a class="headerlink" href="#run-pugsharp-locally" title="Permalink to this heading"></a></h2>
-<p>to be done.</p>
+<section id="run-develop-pugsharp-locally-with-the-make-file">
+<h2>Run / Develop PugSharp locally with the make file<a class="headerlink" href="#run-develop-pugsharp-locally-with-the-make-file" title="Permalink to this heading"></a></h2>
+<p>To make setting up a dev and testing environment easy, we have added a Makefile to our repository, which gives you easy commands that run a variety of stuff for you.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For local testing, we use the <a class="reference external" href="https://github.com/joedwards32/CS2">joedwards32/cs2</a> docker Image  which gets downloaded automatically in this process. This setup will need around 40GB of free space!</p>
+</div>
+<p>To get started, clone our repository, change your directory into it and run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>init-all
+</pre></div>
+</div>
+<p>This will prompt you for a Steam User, a Steam Password and a Steam Guard key in order to download cs2.</p>
+<p>It will take some time to install the server, please leave the console open as long as this runs.</p>
+<p>As soon as the server has started and loaded <code class="docutils literal notranslate"><span class="pre">de_dust2</span></code>, press <code class="docutils literal notranslate"><span class="pre">STRG+C</span></code> on your keyboard.</p>
+<p>To fix the MetaMod installation afterwards, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>fix-metamod
+</pre></div>
+</div>
+<p>Now you can run your server again with the following command that should be used from now on to start your local server.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>start-csserver
+</pre></div>
+</div>
+<p>To build and copy the published realease into the Server you can run one of the two following two commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>build-and-copy-docker
+</pre></div>
+</div>
+<p>The first one requires you to have the Dotnet SDK installed, the second one just uses Docker to build everything.
+You should now have a fully loaded PugSharp plugin inside your running server which can be hotreloaded while the Server is running.</p>
+<p>The Makefile offers a lot more commands, that you should check out. You can find the detailed documentation on <a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a>.</p>
 </section>
 <section id="digging-deeper">
 <h2>Digging deeper<a class="headerlink" href="#digging-deeper" title="Permalink to this heading"></a></h2>
 <p>If you want to know more about our development thoughts, you might want to take a look into:</p>
 <ul class="simple">
+<li><p><a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a></p></li>
 <li><p><a class="reference internal" href="folderstructure.html"><span class="doc">Folder structure</span></a></p></li>
 <li><p><a class="reference internal" href="cicd.html"><span class="doc">CI / CD</span></a></p></li>
 <li><p><a class="reference internal" href="release.html"><span class="doc">Release process</span></a></p></li>
@@ -156,7 +193,7 @@ Some things you should think of before you start implementing new features or fi
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../admin/quickstart.html" class="btn btn-neutral float-left" title="Admins quickstart guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="folderstructure.html" class="btn btn-neutral float-right" title="Folder structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="makefile.html" class="btn btn-neutral float-right" title="Makefile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
