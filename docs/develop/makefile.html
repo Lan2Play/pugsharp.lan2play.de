@@ -67,6 +67,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#install-metamod">install-metamod</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-netruntime">install-netruntime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fix-metamod">fix-metamod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-csserver">build-csserver</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#start-csserver">start-csserver</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#attach-csserver">attach-csserver</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#stop-csserver">stop-csserver</a></li>
@@ -159,7 +160,7 @@ So for example when you have the available parameter <code class="docutils liter
 </section>
 <section id="init-all">
 <h3>init-all<a class="headerlink" href="#init-all" title="Permalink to this heading"></a></h3>
-<p>Prepares the gameserver folder, initializes the .env file for the cs2 server, copies CounterStrikeSharp into the server, installs metamod and starts the server.</p>
+<p>Prepares the gameserver folder, initializes the .env file for the cs2 server, copies CounterStrikeSharp into the server, installs metamod , the dotnet runtime, builds the container image and starts the server.</p>
 <p><strong>Group Command</strong></p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#prepare-folders"><span class="std std-ref">prepare-folders</span></a></p></li>
@@ -167,6 +168,7 @@ So for example when you have the available parameter <code class="docutils liter
 <li><p><a class="reference internal" href="#copy-counterstrikesharp"><span class="std std-ref">copy-counterstrikesharp</span></a></p></li>
 <li><p><a class="reference internal" href="#install-netruntime"><span class="std std-ref">install-netruntime</span></a></p></li>
 <li><p><a class="reference internal" href="#install-metamod"><span class="std std-ref">install-metamod</span></a></p></li>
+<li><p><a class="reference internal" href="#build-csserver"><span class="std std-ref">build-csserver</span></a></p></li>
 <li><p><a class="reference internal" href="#start-csserver"><span class="std std-ref">start-csserver</span></a></p></li>
 </ul>
 <p><strong>Parameters:</strong></p>
@@ -228,6 +230,12 @@ So for example when you have the available parameter <code class="docutils liter
 <section id="fix-metamod">
 <h3>fix-metamod<a class="headerlink" href="#fix-metamod" title="Permalink to this heading"></a></h3>
 <p>inserts the <code class="docutils literal notranslate"><span class="pre">Game</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">csgo/addons/metamod</span></code> command into ./cs2/game/csgo/gameinfo.gi</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="build-csserver">
+<h3>build-csserver<a class="headerlink" href="#build-csserver" title="Permalink to this heading"></a></h3>
+<p>builds the docker image for development</p>
 <p><strong>Parameters:</strong></p>
 <p>No Parameters</p>
 </section>
