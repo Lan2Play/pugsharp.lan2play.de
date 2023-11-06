@@ -125,12 +125,12 @@
 <p><a class="reference external" href="https://www.gnu.org/software/make">GNU Make</a> is a tool that automates several (build)steps for you.
 You can find the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> in the root of the Repository where all available commands are defined.
 On this page every single make command will be documented with its purpose, so you can use them as intended.</p>
+<p>There are 2 types of commands, the group commands and the other commands. Group commands are essentially calling multiple other make Commands here.</p>
 <p>A few of the Commands have optional parameters that can be set via either a prompt after calling the commands or with writing them after the make command.
-So for example when you have the available parameter <code class="docutils literal notranslate"><span class="pre">STEAMUSER</span></code> on the make command <code class="docutils literal notranslate"><span class="pre">init-all</span></code>, that you want to set to <code class="docutils literal notranslate"><span class="pre">username</span></code> your finalized Make command would look like:</p>
+So for example if you had the available parameter <code class="docutils literal notranslate"><span class="pre">STEAMUSER</span></code> on the make command <code class="docutils literal notranslate"><span class="pre">init-all</span></code>, that you want to set to <code class="docutils literal notranslate"><span class="pre">username</span></code> your finalized Make command would look like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>init-all<span class="w"> </span><span class="nv">STEAMUSER</span><span class="o">=</span><span class="s2">&quot;username&quot;</span>
 </pre></div>
 </div>
-<p>There are 2 types of commands, the group commands and the other commands. Group commands are essentially calling multiple other make Commands here.</p>
 </section>
 <section id="commands">
 <h2>Commands<a class="headerlink" href="#commands" title="Permalink to this heading"></a></h2>
