@@ -149,15 +149,14 @@ Some things you should think of before you start implementing new features or fi
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>init-all
 </pre></div>
 </div>
-<p>This will prompt you for a Steam User, a Steam Password and a Steam Guard key in order to download cs2.</p>
 <p>It will take some time to install the server, please leave the console open as long as this runs.</p>
-<p>As soon as the server has started and loaded <code class="docutils literal notranslate"><span class="pre">de_dust2</span></code>, press <code class="docutils literal notranslate"><span class="pre">STRG+C</span></code> on your keyboard.</p>
+<p>As soon as the server has started and loaded <code class="docutils literal notranslate"><span class="pre">de_dust2</span></code>, and shut down the server with  <code class="docutils literal notranslate"><span class="pre">quit</span></code>.</p>
 <p>To fix the MetaMod installation afterwards, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>fix-metamod
 </pre></div>
 </div>
 <p>Now you can run your server again with the following command that should be used from now on to start your local server.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>start-csserver
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>start-attach
 </pre></div>
 </div>
 <p>To build and copy the published realease into the Server you can run one of the two following two commands:</p>
