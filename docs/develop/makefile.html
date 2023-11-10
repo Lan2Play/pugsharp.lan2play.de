@@ -59,13 +59,17 @@
 <li class="toctree-l3"><a class="reference internal" href="#build-and-copy">build-and-copy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-and-copy-docker">build-and-copy-docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#init-all">init-all</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#init-all-docker">init-all-docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-deps">install-deps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-deps-docker">install-deps-docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#clean-all">clean-all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#start-attach">start-attach</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#prepare-folders">prepare-folders</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#init-env">init-env</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#copy-counterstrikesharp">copy-counterstrikesharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-counterstrikesharp">install-counterstrikesharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-counterstrikesharp-docker">install-counterstrikesharp-docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#install-metamod">install-metamod</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#install-netruntime">install-netruntime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-jq-and-unzip">install-jq-and-unzip</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fix-metamod">fix-metamod</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pull-csserver">pull-csserver</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#start-csserver">start-csserver</a></li>
@@ -126,6 +130,7 @@
 You can find the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> in the root of the Repository where all available commands are defined.
 On this page every single make command will be documented with its purpose, so you can use them as intended.</p>
 <p>There are 2 types of commands, the group commands and the other commands. Group commands are essentially calling multiple other make Commands here.</p>
+<p>Some of the Commands require the software <code class="docutils literal notranslate"><span class="pre">jq</span></code> and <code class="docutils literal notranslate"><span class="pre">unzip</span></code> installed on your machine or you have to use the -docker suffixed commands. If you are running debian/ubuntu, you can simply use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install-jq-and-unzip</span></code> , otherwhise refer to the <a class="reference external" href="https://jqlang.github.io/jq/download/">jq download page</a></p>
 <p>A few of the Commands have optional parameters that can be set via either a prompt after calling the commands or with writing them after the make command.
 So for example if you had the available parameter <code class="docutils literal notranslate"><span class="pre">STEAMUSER</span></code> on the make command <code class="docutils literal notranslate"><span class="pre">init-all</span></code>, that you want to set to <code class="docutils literal notranslate"><span class="pre">username</span></code> your finalized Make command would look like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>init-all<span class="w"> </span><span class="nv">STEAMUSER</span><span class="o">=</span><span class="s2">&quot;username&quot;</span>
@@ -165,11 +170,45 @@ So for example if you had the available parameter <code class="docutils literal 
 <ul class="simple">
 <li><p><a class="reference internal" href="#prepare-folders"><span class="std std-ref">prepare-folders</span></a></p></li>
 <li><p><a class="reference internal" href="#init-env"><span class="std std-ref">init-env</span></a></p></li>
-<li><p><a class="reference internal" href="#copy-counterstrikesharp"><span class="std std-ref">copy-counterstrikesharp</span></a></p></li>
-<li><p><a class="reference internal" href="#install-netruntime"><span class="std std-ref">install-netruntime</span></a></p></li>
-<li><p><a class="reference internal" href="#install-metamod"><span class="std std-ref">install-metamod</span></a></p></li>
+<li><p><a class="reference internal" href="#install-deps"><span class="std std-ref">install-deps</span></a></p></li>
 <li><p><a class="reference internal" href="#pull-csserver"><span class="std std-ref">pull-csserver</span></a></p></li>
 <li><p><a class="reference internal" href="#start-csserver"><span class="std std-ref">start-csserver</span></a></p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="init-all-docker">
+<h3>init-all-docker<a class="headerlink" href="#init-all-docker" title="Permalink to this heading"></a></h3>
+<p>Prepares the gameserver folder, initializes the .env file for the cs2 server, copies CounterStrikeSharp into the server, installs metamod , the dotnet runtime, builds the container image and starts the server.</p>
+<p><strong>Group Command</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#prepare-folders"><span class="std std-ref">prepare-folders</span></a></p></li>
+<li><p><a class="reference internal" href="#init-env"><span class="std std-ref">init-env</span></a></p></li>
+<li><p><a class="reference internal" href="#install-deps-docker"><span class="std std-ref">install-deps-docker</span></a></p></li>
+<li><p><a class="reference internal" href="#pull-csserver"><span class="std std-ref">pull-csserver</span></a></p></li>
+<li><p><a class="reference internal" href="#start-csserver"><span class="std std-ref">start-csserver</span></a></p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="install-deps">
+<h3>install-deps<a class="headerlink" href="#install-deps" title="Permalink to this heading"></a></h3>
+<p>Installs counterstrikesharp and metamod to your local cs2 server</p>
+<p><strong>Group Command</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#install-counterstrikesharp"><span class="std std-ref">install-counterstrikesharp</span></a></p></li>
+<li><p><a class="reference internal" href="#install-metamod"><span class="std std-ref">install-metamod</span></a></p></li>
+</ul>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="install-deps-docker">
+<h3>install-deps-docker<a class="headerlink" href="#install-deps-docker" title="Permalink to this heading"></a></h3>
+<p>Installs counterstrikesharp and metamod to your local cs2 server</p>
+<p><strong>Group Command</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#install-counterstrikesharp-docker"><span class="std std-ref">install-counterstrikesharp-docker</span></a></p></li>
+<li><p><a class="reference internal" href="#install-metamod"><span class="std std-ref">install-metamod</span></a></p></li>
 </ul>
 <p><strong>Parameters:</strong></p>
 <p>No Parameters</p>
@@ -209,9 +248,15 @@ So for example if you had the available parameter <code class="docutils literal 
 <p><strong>Parameters:</strong></p>
 <p>No Parameters</p>
 </section>
-<section id="copy-counterstrikesharp">
-<h3>copy-counterstrikesharp<a class="headerlink" href="#copy-counterstrikesharp" title="Permalink to this heading"></a></h3>
-<p>copies the CounterStrikeSharp version that is included in our repo to the cs2 server</p>
+<section id="install-counterstrikesharp">
+<h3>install-counterstrikesharp<a class="headerlink" href="#install-counterstrikesharp" title="Permalink to this heading"></a></h3>
+<p>installs the CounterStrikeSharp version that is configured in the PugSharp Project to the cs2 server</p>
+<p><strong>Parameters:</strong></p>
+<p>No Parameters</p>
+</section>
+<section id="install-counterstrikesharp-docker">
+<h3>install-counterstrikesharp-docker<a class="headerlink" href="#install-counterstrikesharp-docker" title="Permalink to this heading"></a></h3>
+<p>installs the CounterStrikeSharp version that is configured in the PugSharp Project to the cs2 server</p>
 <p><strong>Parameters:</strong></p>
 <p>No Parameters</p>
 </section>
@@ -221,9 +266,9 @@ So for example if you had the available parameter <code class="docutils literal 
 <p><strong>Parameters:</strong></p>
 <p>No Parameters</p>
 </section>
-<section id="install-netruntime">
-<h3>install-netruntime<a class="headerlink" href="#install-netruntime" title="Permalink to this heading"></a></h3>
-<p>downloads and installs the nessecary dotnet runtime into the cs2 server</p>
+<section id="install-jq-and-unzip">
+<h3>install-jq-and-unzip<a class="headerlink" href="#install-jq-and-unzip" title="Permalink to this heading"></a></h3>
+<p>installs jq and unzip on your debian/ubuntu system via apt</p>
 <p><strong>Parameters:</strong></p>
 <p>No Parameters</p>
 </section>

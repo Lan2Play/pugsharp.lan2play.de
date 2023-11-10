@@ -135,7 +135,9 @@ Some things you should think of before you start implementing new features or fi
 <li><p><a class="reference external" href="https://www.gnu.org/software/make">Make</a> installed (use your os packagemanager)</p></li>
 <li><p>Install your IDE of choise (Visual Studio or VSCode works best)</p></li>
 <li><p>a Steam User that has started cs2 at least one time (we recommended a seperate account with Steamguard disabled)</p></li>
-<li><p>(optional) Download and install <a class="reference external" href="https://dotnet.microsoft.com/download/dotnet/7.0">.Net7 SDK</a> (highly recommended)</p></li>
+<li><p>(optional) <a class="reference external" href="https://dotnet.microsoft.com/download/dotnet/7.0">.Net7 SDK</a> (highly recommended - otherwhise use the -docker suffixed commands, see <a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a> )</p></li>
+<li><p>(optional) <code class="docutils literal notranslate"><span class="pre">jq</span></code> installed on your machine. If you are running debian/ubuntu, you can simply use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install-jq-and-unzip</span></code> when you cloned the repo, otherwhise refer to the <a class="reference external" href="https://jqlang.github.io/jq/download/">jq download page</a> (highly recommended - otherwhise use the -docker suffixed commands, see <a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a> )</p></li>
+<li><p>(optional) <code class="docutils literal notranslate"><span class="pre">unzip</span></code> installed on your machine. If you are running debian/ubuntu, you can simply use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install-jq-and-unzip</span></code> when you cloned the repo, otherwhise look up your distros packagemanager (highly recommended - otherwhise use the -docker suffixed commands, see <a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a> )</p></li>
 </ul>
 </section>
 <section id="run-develop-pugsharp-locally-with-the-make-file">
@@ -145,8 +147,11 @@ Some things you should think of before you start implementing new features or fi
 <p class="admonition-title">Warning</p>
 <p>For local testing, we use the <a class="reference external" href="https://github.com/joedwards32/CS2">joedwards32/cs2</a> docker Image  which gets downloaded automatically in this process. This setup will need around 40GB of free space!</p>
 </div>
-<p>To get started, clone our repository, change your directory into it and run the following command:</p>
+<p>To get started, clone our repository, change your directory into it and run one of the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>init-all
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>init-all-docker
 </pre></div>
 </div>
 <p>It will take some time to install the server, please leave the console open as long as this runs.</p>
