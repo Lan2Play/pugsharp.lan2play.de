@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Release process &mdash; PugSharp 2.0 documentation</title>
+  <title>Release process / Branches &mdash; PugSharp 2.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -56,7 +56,12 @@
 <li class="toctree-l1"><a class="reference internal" href="makefile.html">Makefile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="folderstructure.html">Folder structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cicd.html">CI / CD</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Release process</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Release process / Branches</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-alpha">Introduction / Alpha</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#beta">Beta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stable">Stable</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="translation.html">Translation / i18n</a></li>
 </ul>
 
@@ -74,7 +79,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Release process</li>
+      <li class="breadcrumb-item active">Release process / Branches</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/develop/release.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -84,9 +89,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="release-process">
-<h1>Release process<a class="headerlink" href="#release-process" title="Permalink to this heading"></a></h1>
-<p>There is no released version so far. Stay tuned!</p>
+  <section id="release-process-branches">
+<h1>Release process / Branches<a class="headerlink" href="#release-process-branches" title="Permalink to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This part of the documentation is only relevant for people that have full access on our repository, so most likeley not for you.</p>
+</div>
+<section id="introduction-alpha">
+<h2>Introduction / Alpha<a class="headerlink" href="#introduction-alpha" title="Permalink to this heading"></a></h2>
+<p>Currently we are developing on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, which also builds alpha versions on every push automatically.
+In the future it will be changed, so every feature gets its own feature branch and main will only accept pull requests.</p>
+</section>
+<section id="beta">
+<h2>Beta<a class="headerlink" href="#beta" title="Permalink to this heading"></a></h2>
+<p>To deploy a beta release:</p>
+<ul class="simple">
+<li><p>go to <a class="reference external" href="https://github.com/Lan2Play/PugSharp/releases/new">draft a release</a> on the PugSharp Repository</p></li>
+<li><p>decide on the next release version number based on semver defaults</p></li>
+<li><p>create a tag with the naming scheme <code class="docutils literal notranslate"><span class="pre">vX.X.X-beta</span></code> (where X are numbers)</p></li>
+<li><p>enter the title with the naming scheme <code class="docutils literal notranslate"><span class="pre">vX.X.X-beta</span></code> (where X are numbers)</p></li>
+<li><p>you can then klick on <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">release</span> <span class="pre">notes</span></code> and add the other changes in the description</p></li>
+<li><p>check <code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">pre-release</span></code></p></li>
+<li><p>klick on Publish release</p></li>
+<li><p>the CI will add the nessecary files to the release</p></li>
+</ul>
+</section>
+<section id="stable">
+<h2>Stable<a class="headerlink" href="#stable" title="Permalink to this heading"></a></h2>
+<p>To deploy a beta release:</p>
+<ul class="simple">
+<li><p>go to <a class="reference external" href="https://github.com/Lan2Play/PugSharp/releases/new">draft a release</a> on the PugSharp Repository</p></li>
+<li><p>decide on the next release version number based on semver defaults</p></li>
+<li><p>create a tag with the naming scheme <code class="docutils literal notranslate"><span class="pre">vX.X.X</span></code> (where X are numbers)</p></li>
+<li><p>enter the title with the naming scheme <code class="docutils literal notranslate"><span class="pre">vX.X.X</span></code> (where X are numbers)</p></li>
+<li><p>you can then klick on <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">release</span> <span class="pre">notes</span></code> and add the other changes in the description</p></li>
+<li><p>klick on Publish release</p></li>
+<li><p>the CI will add the nessecary files to the release</p></li>
+</ul>
+</section>
 </section>
 
 
