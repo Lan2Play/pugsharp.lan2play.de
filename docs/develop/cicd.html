@@ -55,7 +55,11 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Developers start guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="makefile.html">Makefile</a></li>
 <li class="toctree-l1"><a class="reference internal" href="folderstructure.html">Folder structure</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CI / CD</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CI / CD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#test-and-build-yml">test_and_build.yml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#website-build-yml">website_build.yml</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="release.html">Release process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="translation.html">Translation / i18n</a></li>
 </ul>
@@ -86,7 +90,56 @@
              
   <section id="ci-cd">
 <h1>CI / CD<a class="headerlink" href="#ci-cd" title="Permalink to this heading"></a></h1>
-<p>There is no released version so far. Stay tuned!</p>
+<p>Our CI /CD is setted up in our gh repository with github actions. There are two workflows that we use.</p>
+<section id="test-and-build-yml">
+<h2>test_and_build.yml<a class="headerlink" href="#test-and-build-yml" title="Permalink to this heading"></a></h2>
+<p><a class="reference external" href="https://github.com/Lan2Play/PugSharp/blob/main/.github/workflows/test_and_build.yml">klick here to see the current test_and_build.yml</a></p>
+<p><strong>This workflow runs on:</strong></p>
+<ul class="simple">
+<li><p>every push to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch</p></li>
+<li><p>every push to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch</p></li>
+<li><p>every release / tag that begins with <code class="docutils literal notranslate"><span class="pre">v</span></code></p></li>
+<li><p>every pull request that is authorized to run workflows</p></li>
+</ul>
+<p><strong>Excluted file changes that will not trigger this workflow in any of the above cases:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!Makefile</span></code></p></li>
+</ul>
+<p><strong>This workflow does the following things:</strong></p>
+<ul class="simple">
+<li><p>run the dotnet tests and upload them to sonarcloud</p></li>
+<li><p>get set all download links and versions dynamically</p></li>
+<li><p>generates an example metadata file that maybe someday serves the purpose of easy updating</p></li>
+<li><p>build and package linux packages on ubuntu (the release configuration is only used when a stable release tag, for example <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> is created, otherwise the debug configuration is used)</p></li>
+<li><p>build and package windows packages on windows (the release configuration is only used when a stable release tag, for example <code class="docutils literal notranslate"><span class="pre">v1.0.0</span></code> is created, otherwise the debug configuration is used)</p></li>
+<li><p>Upload the current build as artifacts</p></li>
+<li><p>Upload files to the corresponding release, if the run is triggered with the creation of a release</p></li>
+</ul>
+<p>for more detail check out <a class="reference external" href="https://github.com/Lan2Play/PugSharp/blob/main/.github/workflows/test_and_build.yml">the current version</a></p>
+</section>
+<section id="website-build-yml">
+<h2>website_build.yml<a class="headerlink" href="#website-build-yml" title="Permalink to this heading"></a></h2>
+<p><a class="reference external" href="https://github.com/Lan2Play/PugSharp/blob/main/.github/workflows/website_build.yml">klick here to see the current website_build.yml</a></p>
+<p><strong>This workflow runs only when one of the following files/paths are changed and one of the conditions below is true:</strong></p>
+<p><strong>Files/paths</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Docs/**</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">packaging/Docs/**</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.github/workflows/website_build.yml</span></code></p></li>
+</ul>
+<p><strong>conditions</strong></p>
+<ul class="simple">
+<li><p>every push to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch</p></li>
+<li><p>every release / tag that begins with <code class="docutils literal notranslate"><span class="pre">v</span></code></p></li>
+<li><p>every pull request that is authorized to run workflows</p></li>
+</ul>
+<p><strong>This workflow does the following things:</strong></p>
+<ul class="simple">
+<li><p>build the pugsharp documentation using <a class="reference external" href="https://github.com/Lan2Play/docker-sphinxbuild">docker-sphinxbuild</a></p></li>
+<li><p>publish the page to <a class="reference external" href="https://github.com/Lan2Play/pugsharp.lan2play.de">https://github.com/Lan2Play/pugsharp.lan2play.de</a> if the triggering release / tag begins with <code class="docutils literal notranslate"><span class="pre">v</span></code> or the commit text contains <code class="docutils literal notranslate"><span class="pre">forcepublish</span></code></p></li>
+</ul>
+</section>
 </section>
 
 
