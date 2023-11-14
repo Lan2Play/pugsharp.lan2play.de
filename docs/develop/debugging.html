@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debugging &mdash; PugSharp 2.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=a7e3f902"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Folder structure" href="folderstructure.html" />
+    <link rel="prev" title="Makefile" href="makefile.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PugSharp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License (GNU General Public License)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admins guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../admin/quickstart.html">Admins quickstart guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Developers start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="makefile.html">Makefile</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Debugging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#on-linux-with-vscode">On Linux with vscode</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folderstructure.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cicd.html">CI / CD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release process / Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="translation.html">Translation / i18n</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PugSharp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Debugging</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/develop/debugging.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="debugging">
+<h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading"></a></h1>
+<section id="on-linux-with-vscode">
+<h2>On Linux with vscode<a class="headerlink" href="#on-linux-with-vscode" title="Permalink to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently this guide is only suited for Linux. The development on windows including the testing and debugging in a windows based cs2 server is possible right now, but our makefile and the documentation is lacking how. We will add the support for that soon.</p>
+</div>
+<ul class="simple">
+<li><p>You have to make sure you have followed the <a class="reference internal" href="quickstart.html"><span class="doc">Developers start guide</span></a> and you have your server already running.</p></li>
+<li><p>Open the project in vscode</p></li>
+<li><p>Make sure you have the recommended extensions installed in vscode (press <code class="docutils literal notranslate"><span class="pre">F1</span></code> and select <code class="docutils literal notranslate"><span class="pre">Extensions:</span> <span class="pre">Show</span> <span class="pre">Recommended</span> <span class="pre">Extensions</span></code>)</p></li>
+<li><p>Make sure you have installed the <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/core/install/linux">.NET SDK</a> locally via your package manager (check which version is currently required <a class="reference external" href="https://github.com/Lan2Play/PugSharp/blob/main/PugSharp/PugSharp.csproj">here</a> )</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install-vsdebug</span></code> ( <a class="reference internal" href="makefile.html#install-vsdebug"><span class="std std-ref">install-vsdebug</span></a> ) to install vsdebug inside the cs2 container (you have to do this every time you restart the cs server container)</p></li>
+<li><p>go to the <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">and</span> <span class="pre">Debug</span></code> tab in vscode and select the configuration <code class="docutils literal notranslate"><span class="pre">PugSharp</span> <span class="pre">Docker</span> <span class="pre">Attach</span></code> from the list at the top and klick on the <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Debugging</span></code> button or hit <code class="docutils literal notranslate"><span class="pre">F5</span></code> on your keyboard (which should work after that even if you don’t have the tab opened).</p></li>
+<li><p>you will now see a process selection on top of your window, where you have to select the <code class="docutils literal notranslate"><span class="pre">cs2</span></code> process</p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">make</span></code> one more time, to make sure the code that is running inside your server is acutally the code in your ide and now your debugging / pausing / breakpoints should work.</p></li>
+<li><p>you can leave the debugging running and use <code class="docutils literal notranslate"><span class="pre">make</span></code> after you make changes to the code, the server will hotreload your changes and you should be able to change and debug the code without restarting anything.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="makefile.html" class="btn btn-neutral float-left" title="Makefile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="folderstructure.html" class="btn btn-neutral float-right" title="Folder structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Lan2Play Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

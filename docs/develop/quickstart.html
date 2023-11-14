@@ -61,6 +61,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="makefile.html">Makefile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="folderstructure.html">Folder structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cicd.html">CI / CD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release.html">Release process / Branches</a></li>
@@ -129,13 +130,17 @@ Some things you should think of before you start implementing new features or fi
 </section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently this guide is only suited for Linux or inside your WSL. The development on windows including the testing and debugging in a windows based cs2 server is possible right now, but our makefile and the documentation is lacking how. We will add the support for that soon.</p>
+</div>
 <ul class="simple">
 <li><p>Linux / inside WSL2</p></li>
 <li><p><a class="reference external" href="https://docs.docker.com/engine/install/">Docker</a> installed</p></li>
 <li><p><a class="reference external" href="https://www.gnu.org/software/make">Make</a> installed (use your os packagemanager)</p></li>
 <li><p>Install your IDE of choise (Visual Studio or VSCode works best)</p></li>
 <li><p>a Steam User that has started cs2 at least one time (we recommended a seperate account with Steamguard disabled)</p></li>
-<li><p>(optional) <a class="reference external" href="https://dotnet.microsoft.com/download/dotnet/7.0">.Net7 SDK</a> (highly recommended - otherwhise use the -docker suffixed commands, see <a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a> )</p></li>
+<li><p>(optional - required for debugging) <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/core/install/linux">.NET SDK</a> - check which version is currently required <a class="reference external" href="https://github.com/Lan2Play/PugSharp/blob/main/PugSharp/PugSharp.csproj">here</a> - (highly recommended - otherwhise use the -docker suffixed commands, see <a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a> )</p></li>
 <li><p>(optional) <code class="docutils literal notranslate"><span class="pre">jq</span></code> installed on your machine. If you are running debian/ubuntu, you can simply use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install-jq-and-unzip</span></code> when you cloned the repo, otherwhise refer to the <a class="reference external" href="https://jqlang.github.io/jq/download/">jq download page</a> (highly recommended - otherwhise use the -docker suffixed commands, see <a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a> )</p></li>
 <li><p>(optional) <code class="docutils literal notranslate"><span class="pre">unzip</span></code> installed on your machine. If you are running debian/ubuntu, you can simply use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install-jq-and-unzip</span></code> when you cloned the repo, otherwhise look up your distros packagemanager (highly recommended - otherwhise use the -docker suffixed commands, see <a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a> )</p></li>
 </ul>
@@ -174,12 +179,14 @@ Some things you should think of before you start implementing new features or fi
 <p>The first one requires you to have the Dotnet SDK installed, the second one just uses Docker to build everything.
 You should now have a fully loaded PugSharp plugin inside your running server which can be hotreloaded while the Server is running.</p>
 <p>The Makefile offers a lot more commands, that you should check out. You can find the detailed documentation on <a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a>.</p>
+<p>You should also take a look into the <a class="reference internal" href="debugging.html"><span class="doc">Debugging</span></a> section, since you can now debug pugsharp interactiveley inside the cs2 server.</p>
 </section>
 <section id="digging-deeper">
 <h2>Digging deeper<a class="headerlink" href="#digging-deeper" title="Permalink to this heading"></a></h2>
 <p>If you want to know more about our development thoughts, you might want to take a look into:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="makefile.html"><span class="doc">Makefile</span></a></p></li>
+<li><p><a class="reference internal" href="debugging.html"><span class="doc">Debugging</span></a></p></li>
 <li><p><a class="reference internal" href="folderstructure.html"><span class="doc">Folder structure</span></a></p></li>
 <li><p><a class="reference internal" href="cicd.html"><span class="doc">CI / CD</span></a></p></li>
 <li><p><a class="reference internal" href="release.html"><span class="doc">Release process / Branches</span></a></p></li>
