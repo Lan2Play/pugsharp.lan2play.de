@@ -49,12 +49,26 @@
 <p class="caption" role="heading"><span class="caption-text">Admins guide</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Admins quickstart guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#running-pugsharp-with-docker">Running PugSharp with docker</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-beta">Installation - Beta</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linux-beta-with-counterstrikesharp-and-dotnet-runtime-recommended">Linux - Beta with CounterStrikeSharp and Dotnet Runtime (recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-beta-with-counterstrikesharp-and-dotnet-runtime-recommended">Windows - Beta with CounterStrikeSharp and Dotnet Runtime (recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-beta-with-counterstrikesharp">Linux - Beta with CounterStrikeSharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-beta-with-counterstrikesharp">Windows - Beta With CounterStrikeSharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-beta">Linux Beta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-beta">Windows Beta</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-alpha">Installation - Alpha</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linux-alpha-with-counterstrikesharp-and-dotnet-runtime-recommended">Linux - Alpha with CounterStrikeSharp and Dotnet Runtime (recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-alpha-with-counterstrikesharp-and-dotnet-runtime-recommended">Windows - Alpha with CounterStrikeSharp and Dotnet Runtime (recommended)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-alpha-with-counterstrikesharp">Linux - Alpha with CounterStrikeSharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-alpha-with-counterstrikesharp">Windows - Alpha With CounterStrikeSharp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linux-alpha">Linux Alpha</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-alpha">Windows Alpha</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -94,31 +108,188 @@
              
   <section id="admins-quickstart-guide">
 <h1>Admins quickstart guide<a class="headerlink" href="#admins-quickstart-guide" title="Permalink to this heading"></a></h1>
-<section id="running-pugsharp-with-docker">
-<h2>Running PugSharp with docker<a class="headerlink" href="#running-pugsharp-with-docker" title="Permalink to this heading"></a></h2>
 <section id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a>  (currently no need to install seperatly, we package it with the releases until there is a steady release cycle available)</p></li>
-<li><p><a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a></p></li>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading"></a></h2>
+<ul>
 <li><p>Linux Dedicated Server</p></li>
+<li><p><a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a></p></li>
+<li><p><a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a>  (depending on your selected package, there is no need to install this seperatly)</p></li>
+<li><p>Dotnet Runtime needed by <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> (depending on your selected package, there is no need to install this seperatly)</p>
+<blockquote>
+<div></div></blockquote>
+</li>
 </ul>
 </section>
-<section id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h3>
+<section id="installation-beta">
+<h2>Installation - Beta<a class="headerlink" href="#installation-beta" title="Permalink to this heading"></a></h2>
+<p>We have multiple packages depending on your operating system and if you want to install <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp</a> and the dotnet runtime seperatly. You will find some <code class="docutils literal notranslate"><span class="pre">X.X.X</span></code> placeholders in this guide, replace them with the regarding version.</p>
+<section id="linux-beta-with-counterstrikesharp-and-dotnet-runtime-recommended">
+<h3>Linux - Beta with CounterStrikeSharp and Dotnet Runtime (recommended)<a class="headerlink" href="#linux-beta-with-counterstrikesharp-and-dotnet-runtime-recommended" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Linux Dedicated Server</p></li>
-<li><p>Download one of our releases including <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> and the Dotnet Runtime and unpack it to your csgo folder. Currently you can find really early alpha releases on our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/actions/workflows/test_and_build.yml">Github Actions</a> as Artifacts.</p></li>
+<li><p>Download one of our pre-releases including <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> and the Dotnet Runtime named <code class="docutils literal notranslate"><span class="pre">PugSharp_with_cssharp_and_runtime_linux_X.X.X-beta.zip</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/releases">releases</a> and unpack it to your csgo folder.</p></li>
 <li><p>Have fun and report bugs :D</p></li>
 </ul>
 </section>
-<section id="notes">
-<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h3>
+<section id="windows-beta-with-counterstrikesharp-and-dotnet-runtime-recommended">
+<h3>Windows - Beta with CounterStrikeSharp and Dotnet Runtime (recommended)<a class="headerlink" href="#windows-beta-with-counterstrikesharp-and-dotnet-runtime-recommended" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Windows Dedicated Server</p></li>
+<li><p>Download one of our pre-releases including <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> and the Dotnet Runtime named <code class="docutils literal notranslate"><span class="pre">PugSharp_with_cssharp_and_runtime_windows_X.X.X-beta.zip</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/releases">releases</a> and unpack it to your csgo folder.</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+<section id="linux-beta-with-counterstrikesharp">
+<h3>Linux - Beta with CounterStrikeSharp<a class="headerlink" href="#linux-beta-with-counterstrikesharp" title="Permalink to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This Plugin is in a very early state of development and is not fully working right now! We keep you updated on our discord (you can find it on the home of the docs), if you are interested in using it.</p>
+<p>This method is not recommended, since you have to make sure you update your dotnet runtime yourself, if <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> does so. Only use this if you know why you want to do that.</p>
 </div>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Linux Dedicated Server</p></li>
+<li><p>Download one of our pre-releases including <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a>  named <code class="docutils literal notranslate"><span class="pre">PugSharp_with_cssharp_linux_X.X.X-beta.zip</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/releases">releases</a> and unpack it to your csgo folder.</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">dotnet</span> <span class="pre">runtime</span></code> step in <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/blob/main/.github/workflows/cmake-single-platform.yml">the ci file of CounterStrikeSharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <code class="docutils literal notranslate"><span class="pre">aspnetcore-runtime-X.X.X-linux-x64.tar.gz</span></code> linked there.</p></li>
+<li><p>Extract the contents of the dotnet runtime into <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet</span></code> of your csgo server</p></li>
+<li><p>move the contents of  <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet/shared/Microsoft.NETCore.App/X.X.X</span></code> into  <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet/shared/Microsoft.NETCore.App/</span></code> of your csgo server</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
 </section>
+<section id="windows-beta-with-counterstrikesharp">
+<h3>Windows - Beta With CounterStrikeSharp<a class="headerlink" href="#windows-beta-with-counterstrikesharp" title="Permalink to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is not recommended, since you have to make sure you update your dotnet runtime yourself, if <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> does so. Only use this if you know why you want to do that.</p>
+</div>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Windows Dedicated Server</p></li>
+<li><p>Download one of our pre-releases including <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> named <code class="docutils literal notranslate"><span class="pre">PugSharp_with_cssharp_windows_X.X.X-beta.zip</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/releases">releases</a> and unpack it to your csgo folder.</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">dotnet</span> <span class="pre">runtime</span></code> step in <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/blob/main/.github/workflows/cmake-single-platform.yml">the ci file of CounterStrikeSharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <code class="docutils literal notranslate"><span class="pre">aspnetcore-runtime-X.X.X-win-x64.zip</span></code> linked there.</p></li>
+<li><p>Extract the contents of the dotnet runtime into <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet</span></code> of your csgo server</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+<section id="linux-beta">
+<h3>Linux Beta<a class="headerlink" href="#linux-beta" title="Permalink to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is not recommended, since you have to make sure you update your dotnet runtime yourself, if <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> does so and also update <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a>  if the version of it that PugSharp depends on changes. Only use this if you know why you want to do that.</p>
+</div>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Linux Dedicated Server</p></li>
+<li><p>Download one of our pre-releases named <code class="docutils literal notranslate"><span class="pre">PugSharp_linux_X.X.X-beta.zip</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/releases">releases</a> and unpack it to your csgo folder.</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">CounterStrikeSharp.API</span></code> dependency version in <a class="reference external" href="https://github.com/Lan2Play/PugSharp/blob/main/PugSharp/PugSharp.csproj">the csproj file of Pugsharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/releases">CounterStrikeSharp release</a> that is configured there.</p></li>
+<li><p>Extract the contents of the CounterStrikeSharp into the csgo folder of your csgo server</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">dotnet</span> <span class="pre">runtime</span></code> step in <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/blob/main/.github/workflows/cmake-single-platform.yml">the ci file of CounterStrikeSharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <code class="docutils literal notranslate"><span class="pre">aspnetcore-runtime-X.X.X-linux-x64.tar.gz</span></code> linked there.</p></li>
+<li><p>Extract the contents of the dotnet runtime into <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet</span></code> of your csgo server</p></li>
+<li><p>move the contents of  <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet/shared/Microsoft.NETCore.App/X.X.X</span></code> into  <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet/shared/Microsoft.NETCore.App/</span></code> of your csgo server</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+<section id="windows-beta">
+<h3>Windows Beta<a class="headerlink" href="#windows-beta" title="Permalink to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is not recommended, since you have to make sure you update your dotnet runtime yourself, if <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> does so and also update <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a>  if the version of it that PugSharp depends on changes. Only use this if you know why you want to do that.</p>
+</div>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Windows Dedicated Server</p></li>
+<li><p>Download one of our pre-releases named <code class="docutils literal notranslate"><span class="pre">PugSharp_windows_X.X.X-beta.zip</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/releases">releases</a> and unpack it to your csgo folder.</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">CounterStrikeSharp.API</span></code> dependency version in <a class="reference external" href="https://github.com/Lan2Play/PugSharp/blob/main/PugSharp/PugSharp.csproj">the csproj file of Pugsharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/releases">CounterStrikeSharp release</a> that is configured there.</p></li>
+<li><p>Extract the contents of the CounterStrikeSharp into the csgo folder of your csgo server</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">dotnet</span> <span class="pre">runtime</span></code> step in <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/blob/main/.github/workflows/cmake-single-platform.yml">the ci file of CounterStrikeSharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <code class="docutils literal notranslate"><span class="pre">aspnetcore-runtime-X.X.X-win-x64.zip</span></code> linked there.</p></li>
+<li><p>Extract the contents of the dotnet runtime into <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet</span></code> of your csgo server</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+</section>
+<section id="installation-alpha">
+<h2>Installation - Alpha<a class="headerlink" href="#installation-alpha" title="Permalink to this heading"></a></h2>
+<p>We have multiple packages depending on your operating system and if you want to install <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp</a> and the dotnet runtime seperatly. You will find some <code class="docutils literal notranslate"><span class="pre">X.X.X</span></code> placeholders in this guide, replace them with the regarding version.</p>
+<section id="linux-alpha-with-counterstrikesharp-and-dotnet-runtime-recommended">
+<h3>Linux - Alpha with CounterStrikeSharp and Dotnet Runtime (recommended)<a class="headerlink" href="#linux-alpha-with-counterstrikesharp-and-dotnet-runtime-recommended" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Linux Dedicated Server</p></li>
+<li><p>Download one of our alphas including <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> and the Dotnet Runtime named <code class="docutils literal notranslate"><span class="pre">latest_build_linux_with_cssharp_and_runtime</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/actions/workflows/test_and_build.yml">alpha builds</a> (click on a run, scroll down to artifacts) and unpack the containing <code class="docutils literal notranslate"><span class="pre">PugSharp_with_cssharp_and_runtime_linux_X.X.X-alpha.zip</span></code> to your csgo folder.</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+<section id="windows-alpha-with-counterstrikesharp-and-dotnet-runtime-recommended">
+<h3>Windows - Alpha with CounterStrikeSharp and Dotnet Runtime (recommended)<a class="headerlink" href="#windows-alpha-with-counterstrikesharp-and-dotnet-runtime-recommended" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Windows Dedicated Server</p></li>
+<li><p>Download one of our alphas including <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> and the Dotnet Runtime named <code class="docutils literal notranslate"><span class="pre">latest_build_windows_with_cssharp_and_runtime</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/actions/workflows/test_and_build.yml">alpha builds</a> (click on a run, scroll down to artifacts) and unpack the containing <code class="docutils literal notranslate"><span class="pre">PugSharp_with_cssharp_and_runtime_windows_X.X.X-alpha.zip</span></code> to your csgo folder.</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+<section id="linux-alpha-with-counterstrikesharp">
+<h3>Linux - Alpha with CounterStrikeSharp<a class="headerlink" href="#linux-alpha-with-counterstrikesharp" title="Permalink to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is not recommended, since you have to make sure you update your dotnet runtime yourself, if <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> does so. Only use this if you know why you want to do that.</p>
+</div>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Linux Dedicated Server</p></li>
+<li><p>Download one of our alphas including <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a>  named <code class="docutils literal notranslate"><span class="pre">latest_build_linux_with_cssharp</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/actions/workflows/test_and_build.yml">alpha builds</a> (click on a run, scroll down to artifacts) and unpack the containing <code class="docutils literal notranslate"><span class="pre">PugSharp_with_cssharp_linux_X.X.X-alpha.zip</span></code> to your csgo folder.</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">dotnet</span> <span class="pre">runtime</span></code> step in <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/blob/main/.github/workflows/cmake-single-platform.yml">the ci file of CounterStrikeSharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <code class="docutils literal notranslate"><span class="pre">aspnetcore-runtime-X.X.X-linux-x64.tar.gz</span></code> linked there.</p></li>
+<li><p>Extract the contents of the dotnet runtime into <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet</span></code> of your csgo server</p></li>
+<li><p>move the contents of  <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet/shared/Microsoft.NETCore.App/X.X.X</span></code> into  <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet/shared/Microsoft.NETCore.App/</span></code> of your csgo server</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+<section id="windows-alpha-with-counterstrikesharp">
+<h3>Windows - Alpha With CounterStrikeSharp<a class="headerlink" href="#windows-alpha-with-counterstrikesharp" title="Permalink to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is not recommended, since you have to make sure you update your dotnet runtime yourself, if <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> does so. Only use this if you know why you want to do that.</p>
+</div>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Windows Dedicated Server</p></li>
+<li><p>Download one of our alphas including <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> named <code class="docutils literal notranslate"><span class="pre">latest_build_windows_with_cssharp</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/actions/workflows/test_and_build.yml">alpha builds</a> (click on a run, scroll down to artifacts) and unpack the containing <code class="docutils literal notranslate"><span class="pre">PugSharp_with_cssharp_windows_X.X.X-alpha.zip</span></code> to your csgo folder.</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">dotnet</span> <span class="pre">runtime</span></code> step in <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/blob/main/.github/workflows/cmake-single-platform.yml">the ci file of CounterStrikeSharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <code class="docutils literal notranslate"><span class="pre">aspnetcore-runtime-X.X.X-win-x64.zip</span></code> linked there.</p></li>
+<li><p>Extract the contents of the dotnet runtime into <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet</span></code> of your csgo server</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+<section id="linux-alpha">
+<h3>Linux Alpha<a class="headerlink" href="#linux-alpha" title="Permalink to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is not recommended, since you have to make sure you update your dotnet runtime yourself, if <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> does so and also update <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a>  if the version of it that PugSharp depends on changes. Only use this if you know why you want to do that.</p>
+</div>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Linux Dedicated Server</p></li>
+<li><p>Download one of our alphas named <code class="docutils literal notranslate"><span class="pre">latest_build_linux</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/actions/workflows/test_and_build.yml">alpha builds</a> (click on a run, scroll down to artifacts) and unpack the containing <code class="docutils literal notranslate"><span class="pre">PugSharp_linux_X.X.X-alpha.zip</span></code> to your csgo folder.</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">CounterStrikeSharp.API</span></code> dependency version in <a class="reference external" href="https://github.com/Lan2Play/PugSharp/blob/main/PugSharp/PugSharp.csproj">the csproj file of Pugsharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/releases">CounterStrikeSharp release</a> that is configured there.</p></li>
+<li><p>Extract the contents of the CounterStrikeSharp into the csgo folder of your csgo server</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">dotnet</span> <span class="pre">runtime</span></code> step in <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/blob/main/.github/workflows/cmake-single-platform.yml">the ci file of CounterStrikeSharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <code class="docutils literal notranslate"><span class="pre">aspnetcore-runtime-X.X.X-linux-x64.tar.gz</span></code> linked there.</p></li>
+<li><p>Extract the contents of the dotnet runtime into <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet</span></code> of your csgo server</p></li>
+<li><p>move the contents of  <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet/shared/Microsoft.NETCore.App/X.X.X</span></code> into  <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet/shared/Microsoft.NETCore.App/</span></code> of your csgo server</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+<section id="windows-alpha">
+<h3>Windows Alpha<a class="headerlink" href="#windows-alpha" title="Permalink to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This method is not recommended, since you have to make sure you update your dotnet runtime yourself, if <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a> does so and also update <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp">CounterStrikeSharp by roflmuffin</a>  if the version of it that PugSharp depends on changes. Only use this if you know why you want to do that.</p>
+</div>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://www.sourcemm.net/downloads.php?branch=dev">MetaMod 2.0</a> on your Windows Dedicated Server</p></li>
+<li><p>Download one of our alphas named <code class="docutils literal notranslate"><span class="pre">latest_build_linux</span></code> from our <a class="reference external" href="https://github.com/Lan2Play/PugSharp/actions/workflows/test_and_build.yml">alpha builds</a> (click on a run, scroll down to artifacts) and unpack the containing <code class="docutils literal notranslate"><span class="pre">PugSharp_windows_X.X.X-alpha.zip</span></code> to your csgo folder.</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">CounterStrikeSharp.API</span></code> dependency version in <a class="reference external" href="https://github.com/Lan2Play/PugSharp/blob/main/PugSharp/PugSharp.csproj">the csproj file of Pugsharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/releases">CounterStrikeSharp release</a> that is configured there.</p></li>
+<li><p>Extract the contents of the CounterStrikeSharp into the csgo folder of your csgo server</p></li>
+<li><p>check the <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">dotnet</span> <span class="pre">runtime</span></code> step in <a class="reference external" href="https://github.com/roflmuffin/CounterStrikeSharp/blob/main/.github/workflows/cmake-single-platform.yml">the ci file of CounterStrikeSharp</a> (make sure you use the one from the corresponding release instead the one from the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch) and download the <code class="docutils literal notranslate"><span class="pre">aspnetcore-runtime-X.X.X-win-x64.zip</span></code> linked there.</p></li>
+<li><p>Extract the contents of the dotnet runtime into <code class="docutils literal notranslate"><span class="pre">addons/counterstrikesharp/dotnet</span></code> of your csgo server</p></li>
+<li><p>Have fun and report bugs :D</p></li>
+</ul>
+</section>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This Plugin is in a very early state of development and some things are not fully working right now! Please report any issues you find either on Discord (you can find it on the <a class="reference external" href="https://pugsharp.lan2play.de/">home of the docs</a> ) or in our issues tab on <a class="reference external" href="https://github.com/Lan2Play/PugSharp/issues">Github</a></p>
+</div>
 </section>
 </section>
 
