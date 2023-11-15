@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commands &mdash; PugSharp latest documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=becddca3"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configuration" href="configuration.html" />
+    <link rel="prev" title="Admins quickstart guide" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PugSharp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution.html">Contribution Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License (GNU General Public License)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Admins guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Admins quickstart guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#player-commands">Player Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#admin-rcon-commands">Admin/Rcon Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developers guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../develop/quickstart.html">Developers start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/makefile.html">Makefile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/folderstructure.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/cicd.html">CI / CD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/release.html">Release process / Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/translation.html">Translation / i18n</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PugSharp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Commands</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/admin/commands.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="commands">
+<h1>Commands<a class="headerlink" href="#commands" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>The commands listed below can be executed by either typing it into the ingame chat.</p>
+<p>If you want to use them from your console, remove the <code class="docutils literal notranslate"><span class="pre">!</span></code> in front of them.</p>
+</section>
+<section id="player-commands">
+<h2>Player Commands<a class="headerlink" href="#player-commands" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!ready</span></code></p></td>
+<td><p>Mark the player as ready</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!pause</span></code></p></td>
+<td><p>Pause the match in the next freezetime</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!unpause</span></code></p></td>
+<td><p>Unpause the match. To continue the match, both teams have to <code class="docutils literal notranslate"><span class="pre">!unpause</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!kill``or</span> <span class="pre">``!suicide</span></code></p></td>
+<td><p>Kill the current player if allowed by the <a class="reference internal" href="configuration.html#matchconfig"><span class="std std-ref">Matchconfig</span></a>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="admin-rcon-commands">
+<h2>Admin/Rcon Commands<a class="headerlink" href="#admin-rcon-commands" title="Permalink to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;requiredParameter&gt;</span></code> marks parameters that are required for commands</p>
+<p><code class="docutils literal notranslate"><span class="pre">[optionalParameter]</span></code> marks parameters that can be optionally be added to commands</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_loadconfig</span> <span class="pre">&lt;url&gt;</span> <span class="pre">[authToken]</span></code></p></td>
+<td><p>Load a <a class="reference internal" href="configuration.html#matchconfig"><span class="std std-ref">Matchconfig</span></a> to initialize a match</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_loadconfigfile</span> <span class="pre">&lt;filename&gt;</span></code></p></td>
+<td><p>Load a <a class="reference internal" href="configuration.html#matchconfig"><span class="std std-ref">Matchconfig</span></a> to initialize a match. The file path must be either rooted or relative to <code class="docutils literal notranslate"><span class="pre">csgo/PugSharp/Config/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_restorematch</span> <span class="pre">&lt;matchId&gt;</span> <span class="pre">&lt;round&gt;</span></code></p></td>
+<td><p>Restores match in the given round.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_stopmatch</span></code></p></td>
+<td><p>Danger! Stops the current match immediately and resets the server.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_dumpmatch</span></code></p></td>
+<td><p>Dumps the current matchstate and config to console</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Admins quickstart guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configuration.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Lan2Play Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
