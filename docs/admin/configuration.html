@@ -66,6 +66,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#counterstrikesharp-configs">CounterstrikeSharp Configs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cs2-server-configs">CS2 Server Configs</a></li>
 </ul>
 </li>
@@ -109,7 +110,7 @@
 <h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
-<p>There are two types of configurations that are relevant for PugSharp.</p>
+<p>There are three types of configurations that are relevant for PugSharp.</p>
 </section>
 <section id="pugsharp-configs">
 <h2>PugSharp Configs<a class="headerlink" href="#pugsharp-configs" title="Permalink to this heading"></a></h2>
@@ -258,9 +259,8 @@ map with the most votes gets banned.</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>admins</p></td>
-<td><p>List of admins with the steamId and a
-Name (enables the execution of the <a class="reference internal" href="commands.html#admin-rcon-commands"><span class="std std-ref">Admin/Rcon Commands</span></a> for a player)</p></td>
+<tr class="row-even"><td><p>none</p></td>
+<td><p>none</p></td>
 </tr>
 </tbody>
 </table>
@@ -268,15 +268,17 @@ Name (enables the execution of the <a class="reference internal" href="commands.
 <section id="serverconfig-example">
 <h4>Serverconfig Example<a class="headerlink" href="#serverconfig-example" title="Permalink to this heading"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;admins&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;12345678901234569&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOT R00st3r&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;12345678901234567&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Apfelwurm&quot;</span>
-<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">&quot;none&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 </section>
+</section>
+<section id="counterstrikesharp-configs">
+<h2>CounterstrikeSharp Configs<a class="headerlink" href="#counterstrikesharp-configs" title="Permalink to this heading"></a></h2>
+<p>For the administration permissions, we are using <a class="reference external" href="https://docs.cssharp.dev/admin-framework/defining-admins/#standard-permissions">the CounterstrikeSharp admin framework</a> .
+Currently all <a class="reference internal" href="commands.html#admin-rcon-commands"><span class="std std-ref">Admin/Rcon Commands</span></a> are using the permission <code class="docutils literal notranslate"><span class="pre">&#64;pugsharp/matchadmin</span></code></p>
 </section>
 <section id="cs2-server-configs">
 <h2>CS2 Server Configs<a class="headerlink" href="#cs2-server-configs" title="Permalink to this heading"></a></h2>
