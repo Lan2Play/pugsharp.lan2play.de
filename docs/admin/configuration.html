@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Configuration &mdash; PugSharp latest documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -201,9 +203,9 @@ map with the most votes gets banned.</p></td>
 <td><p>de_dust2</p></td>
 <td><p>Map used during warm-up and voting.</p></td>
 </tr>
-<tr class="row-even"><td><p>server_locale</p></td>
-<td><p>en</p></td>
-<td><p>This is the language that will be used for the messages that are printed to the users</p></td>
+<tr class="row-even"><td><p>team_mode</p></td>
+<td><p>0</p></td>
+<td><p>Change how teams are defined. 0: Default (Teams are fix defined) 1: Scramble (Teams are scrambled when all players are ready)</p></td>
 </tr>
 </tbody>
 </table>
@@ -250,17 +252,24 @@ map with the most votes gets banned.</p></td>
 <section id="serverconfig">
 <h3>Serverconfig<a class="headerlink" href="#serverconfig" title="Permalink to this heading"></a></h3>
 <p>The Serverconfig defines server wide PugSharp settings for your server. It is loaded automatically when PugSharp is loaded.</p>
+<p>Location: /game/csgo/PugSharp/Config/server.json</p>
 <section id="serverconfig-fields">
 <h4>Serverconfig Fields<a class="headerlink" href="#serverconfig-fields" title="Permalink to this heading"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Default</p></th>
 <th class="head"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>none</p></td>
-<td><p>none</p></td>
+<tr class="row-even"><td><p>locale</p></td>
+<td><p>en</p></td>
+<td><p>This is the language that will be used for the messages that are printed to the users</p></td>
+</tr>
+<tr class="row-odd"><td><p>allow_players_without_match</p></td>
+<td><p>true</p></td>
+<td><p>Defines if players can join the server when no match is loaded.</p></td>
 </tr>
 </tbody>
 </table>
@@ -268,7 +277,8 @@ map with the most votes gets banned.</p></td>
 <section id="serverconfig-example">
 <h4>Serverconfig Example<a class="headerlink" href="#serverconfig-example" title="Permalink to this heading"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;none&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="nt">&quot;locale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;allow_players_without_match&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
 </div>

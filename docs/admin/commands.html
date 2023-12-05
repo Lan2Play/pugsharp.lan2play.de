@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Commands &mdash; PugSharp latest documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -150,6 +152,33 @@
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_dumpmatch</span></code></p></td>
 <td><p>Dumps the current matchstate and config to console</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_creatematch</span></code></p></td>
+<td><p>Creates a new match without preloaded configuration.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_addmap</span></code></p></td>
+<td><p>Add a map to the map pool during match creation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_removemap</span></code></p></td>
+<td><p>Remove a map from the map pool during match creation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_playersperteam</span> <span class="pre">&lt;players&gt;</span></code></p></td>
+<td><p>Sets the number of players per team.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_maxrounds</span> <span class="pre">&lt;rounds&gt;</span></code></p></td>
+<td><p>Sets the max number of rounds.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_maxovertimerounds</span> <span class="pre">&lt;rounds&gt;</span></code></p></td>
+<td><p>Sets the max number of overtime rounds.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_teammode</span> <span class="pre">&lt;teammode&gt;</span></code></p></td>
+<td><p>Sets the teammode.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_startmatch</span></code></p></td>
+<td><p>After match configuration is done with <code class="docutils literal notranslate"><span class="pre">!ps_creatematch</span></code> the match can be started.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!ps_matchinfo</span></code></p></td>
+<td><p>Shows the match configuration for the current match or matchcreation.</p></td>
 </tr>
 </tbody>
 </table>
