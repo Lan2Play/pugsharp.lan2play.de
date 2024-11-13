@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
@@ -6,18 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Configuration &mdash; PugSharp latest documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=becddca3"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=becddca3"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -58,6 +56,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#pugsharp-configs">PugSharp Configs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#matchconfig">Matchconfig</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#matchconfig-fields">Matchconfig Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#team-fields">Team Fields</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#matchconfig-example">Matchconfig Example</a></li>
 </ul>
 </li>
@@ -210,11 +209,45 @@ map with the most votes gets banned.</p></td>
 </tbody>
 </table>
 </section>
+<section id="team-fields">
+<h4>Team Fields<a class="headerlink" href="#team-fields" title="Permalink to this heading"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>DefaultValue</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>ULID</p></td>
+<td><p>Id for the Team, if not defined a new ULID will be generated</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>none (required)</p></td>
+<td><p>The Teamname</p></td>
+</tr>
+<tr class="row-even"><td><p>tag</p></td>
+<td><p>none (required)</p></td>
+<td><p>Currently not used</p></td>
+</tr>
+<tr class="row-odd"><td><p>flag</p></td>
+<td><p>DE (required)</p></td>
+<td><p>The flag that is displayed</p></td>
+</tr>
+<tr class="row-even"><td><p>players</p></td>
+<td><p>none</p></td>
+<td><p>The List of Players (SteamID and Username). If defined only the given players can join the match.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="matchconfig-example">
 <h4>Matchconfig Example<a class="headerlink" href="#matchconfig-example" title="Permalink to this heading"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;maplist&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;de_vertigo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;de_dust2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;de_inferno&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;de_mirage&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;de_nuke&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;de_overpass&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;de_ancient&quot;</span><span class="p">],</span>
 <span class="w">  </span><span class="nt">&quot;team1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hallo&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hallo&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;flag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DE&quot;</span><span class="p">,</span>
@@ -224,6 +257,7 @@ map with the most votes gets banned.</p></td>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">&quot;team2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;asd&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;asd&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;flag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DE&quot;</span><span class="p">,</span>
